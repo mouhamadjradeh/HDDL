@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  webapp:
+    build:
+      context: ./webapp  # Contexte de build pour le Webapp
+    ports:
+      - "7860:7860"  # Mapper le port local 7860 au port 7860 du conteneur
+    depends_on:
+      - api  # Le Webapp dépend de l'API
+    environment:
+      - API_URL=http://api:5000  # URL de l'API
+    networks:
+      - app-network
+    command: sh -c "echo \"Webapp démarré. Vous pouvez y accéder sur http://localhost:7860\" && python cvae_gradio.py"
+
+  api:
+    build:
+      context: ./api  # Contexte de build pour l'API
+    ports:
+      - "5000:5000"  # Mapper le port local 5000 au port 5000 du conteneur
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+
+
