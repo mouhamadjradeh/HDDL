@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   webapp:
-    image: jradeh/webapp:latest  # Remplacez par votre image Docker Hub
+    image: jradeh/webapp:latest  # image Docker Hub
     ports:
       - "7860:7860"  # Mapper le port local 7860 au port 7860 du conteneur
     depends_on:
@@ -14,7 +14,7 @@ services:
     command: sh -c "echo \"Webapp démarré. Vous pouvez y accéder sur http://localhost:7860\" && python cvae_gradio.py"
 
   api:
-    image: jradeh/api:latest  # Remplacez par votre image Docker Hub
+    image: jradeh/api:latest  # image Docker Hub
     ports:
       - "5000:5000"  # Mapper le port local 5000 au port 5000 du conteneur
     networks:
