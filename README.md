@@ -7,7 +7,7 @@
   git clone https://github.com/mouhamadjradeh/HDDL.git
   
 
-### Étape 3 : Démarrer les services Docker
+### Étape 2 : Démarrer les services Docker
 Accédez au répertoire contenant le fichier `docker-compose.yml` 
 cd HDDL
 et exécutez la commande suivante :
@@ -15,6 +15,6 @@ et exécutez la commande suivante :
 sudo docker-compose up
 
 
-### Étape 4 : Accéder à l’application
+### Étape 3 : Accéder à l’application
 Une fois les services démarrés, ouvrez votre navigateur web et accédez à l’adresse suivante :  
 http://localhost:7860
